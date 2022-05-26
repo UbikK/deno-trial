@@ -4,10 +4,11 @@ class DbManager {
   private static _manager: Database;
   private constructor(){
     const connection = new PostgresConnector({
-      host: 'http://127.0.0.1:5432',
+      host: '127.0.0.1',
       username: 'user',
       password: 'example',
       database: 'default',
+      port: 5432
     });
     DbManager._manager = new Database({connector: connection, debug: true});
   }
